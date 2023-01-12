@@ -46,3 +46,14 @@ npm run dev
 
 https://aws.amazon.com/jp/cdk/
 
+## 機能
+
+- 問題文表示機能
+    - MarkDown
+- 環境構築機能 
+- チェックサービスの導入
+    - Webでユーザごとの採点(LaravelAPI)
+    - OTPを使って判定コードを持ってくる
+    - ランキング形式で表示
+- 会員登録機能(GitHubAuth?)
+    - グループ機能
