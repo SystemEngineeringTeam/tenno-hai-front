@@ -1,10 +1,11 @@
-# tenno-hai-backend
+# tenno-hai-front
 
 https://hackmd.io/@hihumikan/r1aRDgpqs/edit
 
 ## Introduction
 
 ユーザ登録と問題やランキング表示、インストール方法などの天皇杯をサポートするWebサービスを提供します。
+Laravel All in Oneで作成されたアプリですが、WebAPIも利用可能とします。
 
 ## Enbironment
 
