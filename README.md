@@ -78,13 +78,13 @@ https://aws.amazon.com/jp/cdk/
     - timestamps
 - Category
     - id
-    - category_name
+    - name
     - timestamps
 - Result
     - id
     - issue_id
     - user_id
-    - point
+    - answer
     - timestamps
 - Group
     - id
