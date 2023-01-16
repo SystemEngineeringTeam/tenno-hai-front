@@ -4,8 +4,7 @@ https://hackmd.io/@hihumikan/r1aRDgpqs/edit
 
 ## Introduction
 
-ユーザ登録と問題やランキング表示、インストール方法などの天皇杯をサポートするWebサービスを提供します。
-Laravel All in Oneで作成されたアプリですが、WebAPIも利用可能とします。
+ユーザ登録と問題やランキング表示、インストール方法などの天皇杯をサポートするWebサービスを提供します。 Laravel All in Oneで作成されたアプリですが、WebAPIも利用可能とします。
 
 ## Enbironment
 
@@ -58,3 +57,35 @@ https://aws.amazon.com/jp/cdk/
     - ランキング形式で表示
 - 会員登録機能(GitHubAuth?)
     - グループ機能
+
+## DB
+
+- User
+    - id
+    - name
+    - email
+    - verified_at
+    - password
+    - remembertoken
+    - group_id
+    - timestamps
+- Issue
+    - id
+    - title
+    - content
+    - category
+    - timestamps
+- Category
+    - id
+    - category_name
+    - timestamps
+- Result
+    - id
+    - issue_id
+    - user_id
+    - point
+    - timestamps
+- Group
+    - id
+    - name
+    - timestamps
