@@ -74,7 +74,7 @@ https://aws.amazon.com/jp/cdk/
     - id
     - title
     - content
-    - category
+    - category_id
     - timestamps
 - Category
     - id
@@ -85,6 +85,7 @@ https://aws.amazon.com/jp/cdk/
     - issue_id
     - user_id
     - answer
+      - bool
     - timestamps
 - Group
     - id
