@@ -44,6 +44,7 @@ npm run dev
 
 ### CDK
 
+Laravel on ECS(Fargate)を実装する(予定)
 https://aws.amazon.com/jp/cdk/
 
 ## 機能
