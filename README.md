@@ -6,6 +6,36 @@ https://hackmd.io/@hihumikan/r1aRDgpqs/edit
 
 ユーザ登録と問題やランキング表示、インストール方法などの天皇杯をサポートするWebサービスを提供します。 Laravel All in Oneで作成されたアプリですが、WebAPIも利用可能とします。
 
+## Usage
+
+tennohai.qqey.net から利用出来ます。
+
+<!-- TODO -->
+
+## Purpose
+
+大学サークルであるシス研では、オンプレミス環境のサーバがあり、現場と変わらない本格的なネットワーク環境を構築しています。
+
+しかしながら、サークルという環境は企業とは違い、人の流動性があり、人が手入れするのが難しくなっています。
+
+属人化や人手不足が課題になっていることから立案されたのがプロジェクト天皇杯です。
+
+## Requirement definition
+<!-- 要件定義,実装した機能 -->
+
+- 問題文表示機能
+    - MarkDown
+- 環境構築機能 
+- チェックサービスの導入
+    - Webでユーザごとの採点(LaravelAPI)
+    - OTPを使って判定コードを持ってくる
+    - ランキング形式で表示
+- 会員登録機能(GitHubAuth?)
+    - グループ機能
+
+## Feature
+<!-- 実装予定 -->
+
 ## Enbironment
 
 | Tool     | Version |
@@ -14,7 +44,7 @@ https://hackmd.io/@hihumikan/r1aRDgpqs/edit
 | Node.js  |         |
 | PHP      |         |
 
-## Usage
+## Development
 
 ### Laravel
 
@@ -47,19 +77,8 @@ npm run dev
 Laravel on ECS(Fargate)を実装する(予定)
 https://aws.amazon.com/jp/cdk/
 
-## 機能
 
-- 問題文表示機能
-    - MarkDown
-- 環境構築機能 
-- チェックサービスの導入
-    - Webでユーザごとの採点(LaravelAPI)
-    - OTPを使って判定コードを持ってくる
-    - ランキング形式で表示
-- 会員登録機能(GitHubAuth?)
-    - グループ機能
-
-## DB
+## Database
 
 - User
     - id
@@ -91,3 +110,10 @@ https://aws.amazon.com/jp/cdk/
     - id
     - name
     - timestamps
+
+## Web
+
+
+## WebAPI
+
+
