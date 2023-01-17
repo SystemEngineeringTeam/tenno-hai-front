@@ -136,70 +136,54 @@ classDiagram
 <!-- Webアプリケーション構成 -->
 Webアプリケーション構成は以下の通りです。
 
-- /index
-  - GET
-- /login
-  - GET
-  - POST
-- /register
-  - GET
-  - POST
-- /logout
-  - POST
-- /issues
-  - GET
-  - POST
-- /issues/{id}
-  - GET
-  - POST
-- /issues/{id}/edit
-  - GET
-  - POST
-- /issues/{id}/delete
-  - POST
-- /categories
-  - GET
-  - POST
-- /categories/{id}
-  - GET
-  - POST
-- /categories/{id}/edit
-  - GET
-  - POST
-- /categories/{id}/delete
-  - POST
-- /groups
-  - GET
-  - POST
-- /groups/{id}
-  - GET
-  - POST
-- /groups/{id}/edit
-  - GET
-  - POST
-- /groups/{id}/delete
-  - POST
-- /users
-  - GET
-  - POST
-- /users/{id}
-  - GET
-  - POST
-- /users/{id}/edit
-  - GET
-  - POST
-- /users/{id}/delete
-  - POST
-- /issues/{id}/result
-  - GET
-  - POST
-- /issues/{id}/result/{id}
-  - GET
-  - POST
-- /issues/{id}/result/{id}/edit
-  - GET
-  - POST
-- /issues/{id}/result/{id}/delete
-  - POST
+```php
+  /index --> GET;
 
-## WebAPI
+  /login --> GET;
+  /login --> POST;
+
+  /register --> GET;
+  /register --> POST;
+
+  /logout --> POST;
+
+  /issues --> GET;
+  /issues --> POST;
+  /issues/:id --> GET;
+  /issues/:id --> POST;
+  /issues/:id/edit --> GET;
+  /issues/:id/edit --> POST;
+  /issues/:id/delete --> POST;
+
+  /categories --> GET;
+  /categories --> POST;
+  /categories/:id --> GET;
+  /categories/:id --> POST;
+  /categories/:id/edit --> GET;
+  /categories/:id/edit --> POST;
+  /categories/:id/delete --> POST;
+
+  /groups --> GET;
+  /groups --> POST;
+  /groups/:id --> GET;
+  /groups/:id --> POST;
+  /groups/:id/edit --> GET;
+  /groups/:id/edit --> POST;
+  /groups/:id/delete --> POST;
+
+  /users --> GET;
+  /users --> POST;
+  /users/:id --> GET;
+  /users/:id --> POST;
+  /users/:id/edit --> GET;
+  /users/:id/edit --> POST;
+  /users/:id/delete --> POST;
+
+  /issues/:id/result --> GET;
+  /issues/:id/result --> POST;
+  /issues/:id/result/:id --> GET;
+  /issues/:id/result/:id --> POST;
+  /issues/:id/result/:id/edit --> GET;
+  /issues/:id/result/:id/edit --> POST;
+  /issues/:id/result/:id/delete --> POST;
+```
