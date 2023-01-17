@@ -76,13 +76,38 @@ Laravel on ECS(Fargate)を実装する(予定)
 
 ## Database
 <!-- データベース構成 -->
+erDiagram
 
-```mermaid
-classDiagram
-    User "1" -- "0..1" Group : belongsTo
-    Issue "1" -- "1..n" Category : belongsTo
-    Issue "1" -- "0..n" Result : hasMany
-    Result "1" -- "1" User : belongsTo
+- User
+    - id
+    - name
+    - email
+    - verified_at
+    - password
+    - remembertoken
+    - group_id
+    - timestamps
+- Issue
+    - id
+    - title
+    - content
+    - category_id
+    - timestamps
+- Category
+    - id
+    - name
+    - timestamps
+- Result
+    - id
+    - issue_id
+    - user_id
+    - answer
+      - bool
+    - timestamps
+- Group
+    - id
+    - name
+    - timestamps
 
 
     class User{
