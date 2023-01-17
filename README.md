@@ -42,7 +42,7 @@
 
 ```mermaid
 graph LR
-A[VPC] -- Runs --> B(Docker)
+A[VPS] -- Runs --> B(Docker)
 B -- Contains --> C(Laravel Application)
 C -- Connects to --> D[MySQL]
 ```
