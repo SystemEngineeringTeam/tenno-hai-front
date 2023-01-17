@@ -64,12 +64,15 @@ C -- Connects to --> D[Aurora]
 Laravel Sailでの環境構築を想定してますが、状況に応じてご自身でDB環境など用意して貰っても構いません。
 
 ```shell
+# Laravel install
 cd ./laravel
 composer install
 cp .env.sample .env
 ./vendor/bin/sail up -d
 ./vendor/bin/sail php artisan key:generate
 ./vendor/bin/sail php artisan migrate
+
+# View install
 ./vendor/bin/sail npm install
 ./vendor/bin/sail npm run dev
 ```
