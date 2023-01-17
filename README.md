@@ -6,7 +6,7 @@
 
 ## Usage
 <!-- 使い方 -->
-https://tennohai.qqey.net から利用出来ます。
+<https://tennohai.qqey.net> から利用出来ます。
 
 <!-- TODO -->
 
@@ -19,18 +19,20 @@ https://tennohai.qqey.net から利用出来ます。
 
 プロジェクト天皇杯は、属人化、人手不足という課題を解決するために立案されました。
 
+シス研に限らず、インフラを学びたい方に向けたサービスを提供する予定です。
+
 ## Requirement definition
 <!-- 要件定義,実装した機能 -->
 
 - 問題文表示機能
-    - MarkDown
-- 環境構築機能 
+  - MarkDown
+- 環境構築機能
 - チェックサービスの導入
-    - Webでユーザごとの採点(LaravelAPI)
-    - OTPを使って判定コードを持ってくる
-    - ランキング形式で表示
+  - Webでユーザごとの採点(LaravelAPI)
+  - OTPを使って判定コードを持ってくる
+  - ランキング形式で表示
 - 会員登録機能(GitHubAuth?)
-    - グループ機能
+  - グループ機能
 
 ## Feature
 <!-- 実装予定 -->
@@ -38,84 +40,96 @@ https://tennohai.qqey.net から利用出来ます。
 ## Enbironment
 <!-- env -->
 
-| Tool     | Version |
-| -------- | ------- |
-| Composer |         |
-| Node.js  |         |
-| PHP      |         |
+| Tool           | Version  |
+| -------------- | -------- |
+| Composer       | 2.2.6    |
+| Node.js        | 16.15.0  |
+| PHP            | 8.1.2    |
+| Docker Compose | 2.4.1    |
+| Docker         | 20.10.14 |
 
 ## Development
 <!-- 開発着手方法 -->
-
 ### Laravel
-#### Dockerで行う場合
 
-```bash
+事前にComposer,Docker,DockerComposeの導入が必要です
+Laravel Sailでの環境構築を想定してますが、状況に応じてご自身でDB環境など用意して貰っても構いません。
+
+```shell
+cd ./laravel
 composer install
 cp .env.sample .env
-./vendor/bin/sail up
-sail php artisan key:generate
-sail php artisan migrate
-sail npm install
-sail npm run dev
+./vendor/bin/sail up -d
+./vendor/bin/sail php artisan key:generate
+./vendor/bin/sail php artisan migrate
+./vendor/bin/sail npm install
+./vendor/bin/sail npm run dev
 ```
 
-#### PHP(Composer)で行う場合
-
-```bash
-composer install
-cp .env.sample .env
-php artisan key:generate
-php artisan migrate
-php artsan serve
-npm install
-npm run dev
-```
+Access: <http://localhost/>
 
 ### CDK
 
 Laravel on ECS(Fargate)を実装する(予定)
 
-https://aws.amazon.com/jp/cdk/
-
+<https://aws.amazon.com/jp/cdk/>
 
 ## Database
 <!-- データベース構成 -->
 
-- User
-    - id
-    - name
-    - email
-    - verified_at
-    - password
-    - remembertoken
-    - group_id
-    - timestamps
-- Issue
-    - id
-    - title
-    - content
-    - category_id
-    - timestamps
-- Category
-    - id
-    - name
-    - timestamps
-- Result
-    - id
-    - issue_id
-    - user_id
-    - answer
-      - bool
-    - timestamps
-- Group
-    - id
-    - name
-    - timestamps
+```mermaid
+classDiagram
+    User "1" -- "0..1" Group : belongsTo
+    Issue "1" -- "1..n" Category : belongsTo
+    Issue "1" -- "0..n" Result : hasMany
+    Result "1" -- "1" User : belongsTo
+
+
+    class User{
+        +bigIncrements id
+        +VARCHAR name
+        +VARCHAR email [unique]
+        +TIMESTAMP email_verified_at [nullable]
+        +VARCHAR password
+        +VARCHAR remember_token [nullable]
+        +bigInteger group_id [nullable]
+        +TIMESTAMP created_at
+        +TIMESTAMP updated_at
+    }
+    
+    class Issue{
+        +bigIncrements id
+        +VARCHAR title
+        +TEXT content
+        +bigInteger category_id
+        +TIMESTAMP created_at
+        +TIMESTAMP updated_at
+    }
+
+    class Category{
+        +bigIncrements id
+        +VARCHAR name
+        +TIMESTAMP created_at
+        +TIMESTAMP updated_at
+    }
+
+    class Result{
+        +bigIncrements id
+        +bigInteger issue_id
+        +bigInteger user_id
+        +BOOLEAN answer
+        +TIMESTAMP created_at
+        +TIMESTAMP updated_at
+    }
+
+    class Group{
+        +bigIncrements id
+        +VARCHAR name
+        +TIMESTAMP created_at
+        +TIMESTAMP updated_at
+    }
+```
 
 ## Web
 
-
 ## WebAPI
-
-
