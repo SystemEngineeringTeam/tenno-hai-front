@@ -42,9 +42,9 @@
 
 ```mermaid
 graph LR
-A[VPS] -- Runs --> B(Docker)
-B -- Contains --> C(Laravel Application)
-C -- Connects to --> D[MySQL]
+A[EC2] -- Runs --> B(Docker)
+B -- Contains --> C(Laravel)
+C -- Connects to --> D[Aurora]
 ```
 
 | Tool           | Version  |
