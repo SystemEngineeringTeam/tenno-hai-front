@@ -40,9 +40,9 @@ https://tennohai.qqey.net から利用出来ます。
 
 | Tool     | Version |
 | -------- | ------- |
-| Composer |         |
-| Node.js  |         |
-| PHP      |         |
+| Composer |  2.2.6   |
+| Node.js  | 16.15.0  |
+| PHP      | 8.1.2   |
 
 ## Development
 <!-- 開発着手方法 -->
@@ -81,7 +81,17 @@ https://aws.amazon.com/jp/cdk/
 
 ## Database
 <!-- データベース構成 -->
+erDiagram
 
+users ||--|{ articles: ""
+
+users {
+  test test
+}
+
+articles {
+  test test
+}
 - User
     - id
     - name
