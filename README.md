@@ -35,10 +35,17 @@
   - グループ機能
 
 ## Feature
-<!-- 実装予定 -->
+
+- 時限式の問題表示..
 
 ## Enbironment
-<!-- env -->
+
+```mermaid
+graph LR
+A[VPC] -- Runs --> B(Docker)
+B -- Contains --> C(Laravel Application)
+C -- Connects to --> D[MySQL]
+```
 
 | Tool           | Version  |
 | -------------- | -------- |
@@ -71,7 +78,24 @@ Access: <http://localhost/>
 
 ### CDK
 
-Laravel on ECS(Fargate)を実装する(予定)
+laravelのデプロイにはCDKを利用する(予定)。
+
+```shell
+# cdk install
+npm install -g aws-cdk
+
+# aws cli install
+brew install awscli
+
+# aws configure
+aws configure
+
+# cdk deploy
+cd ./cdk
+npm install
+npm run build
+cdk deploy
+```
 
 <https://aws.amazon.com/jp/cdk/>
 
