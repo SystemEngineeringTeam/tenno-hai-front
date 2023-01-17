@@ -52,7 +52,8 @@
 <!-- 開発着手方法 -->
 ### Laravel
 
-事前にComposer,Docker,DockerComposeの導入が必要です
+事前にComposer,Docker,DockerComposeの導入が必要です。
+
 Laravel Sailでの環境構築を想定してますが、状況に応じてご自身でDB環境など用意して貰っても構いません。
 
 ```shell
@@ -76,6 +77,7 @@ Laravel on ECS(Fargate)を実装する(予定)
 
 ## Database
 <!-- データベース構成 -->
+データベース構成は以下の通りです。
 
 ```mermaid
 classDiagram
@@ -131,5 +133,73 @@ classDiagram
 ```
 
 ## Web
+<!-- Webアプリケーション構成 -->
+Webアプリケーション構成は以下の通りです。
+
+- /index
+  - GET
+- /login
+  - GET
+  - POST
+- /register
+  - GET
+  - POST
+- /logout
+  - POST
+- /issues
+  - GET
+  - POST
+- /issues/{id}
+  - GET
+  - POST
+- /issues/{id}/edit
+  - GET
+  - POST
+- /issues/{id}/delete
+  - POST
+- /categories
+  - GET
+  - POST
+- /categories/{id}
+  - GET
+  - POST
+- /categories/{id}/edit
+  - GET
+  - POST
+- /categories/{id}/delete
+  - POST
+- /groups
+  - GET
+  - POST
+- /groups/{id}
+  - GET
+  - POST
+- /groups/{id}/edit
+  - GET
+  - POST
+- /groups/{id}/delete
+  - POST
+- /users
+  - GET
+  - POST
+- /users/{id}
+  - GET
+  - POST
+- /users/{id}/edit
+  - GET
+  - POST
+- /users/{id}/delete
+  - POST
+- /issues/{id}/result
+  - GET
+  - POST
+- /issues/{id}/result/{id}
+  - GET
+  - POST
+- /issues/{id}/result/{id}/edit
+  - GET
+  - POST
+- /issues/{id}/result/{id}/delete
+  - POST
 
 ## WebAPI
