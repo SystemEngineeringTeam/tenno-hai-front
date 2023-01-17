@@ -81,7 +81,7 @@ Access: <http://localhost/>
 
 ### CDK
 
-laravelのデプロイにはCDKを利用する(予定)。
+インフラ構成はCDKを利用する(予定)。
 
 ```shell
 # cdk install
