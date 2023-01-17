@@ -8,7 +8,11 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *Group
++bigIncrements id
++VARCHAR name
++TIMESTAMP created_at
++TIMESTAMP updated_at
      * @return void
      */
     public function up()

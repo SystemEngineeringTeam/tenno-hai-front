@@ -8,7 +8,16 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     *
+     *User
++bigIncrements id
++VARCHAR name
++VARCHAR email [unique]
++TIMESTAMP email_verified_at [nullable]
++VARCHAR password
++VARCHAR remember_token [nullable]
++bigInteger group_id [nullable]
++TIMESTAMP created_at
++TIMESTAMP updated_at
      * @return void
      */
     public function up()
@@ -20,6 +29,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->unsignedBigInteger('group_id');
+            $table->foreign("group_id")->references("id")->on("groups");
             $table->timestamps();
         });
     }

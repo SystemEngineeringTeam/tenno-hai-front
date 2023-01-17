@@ -8,23 +8,18 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     * Issue
+     *Category
 +bigIncrements id
-+VARCHAR title
-+TEXT content
-+bigInteger category_id
++VARCHAR name
 +TIMESTAMP created_at
 +TIMESTAMP updated_at
      * @return void
      */
     public function up()
     {
-        Schema::create('issues', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->text("content");
-            $table->unsignedBigInteger("category_id");
-            $table->foreign("category_id")->references("id")->on("categories");
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -36,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('issues');
+        Schema::dropIfExists('categories');
     }
 };
