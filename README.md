@@ -36,7 +36,23 @@
 
 ## Feature
 
-- 時限式の問題表示..
+- 会員登録機能(middleware:auth)
+  - /login
+  - /register
+  - /profile
+  - /group
+- 環境構築機能
+  - tutorial/getting-started
+  - tutorial/docker基礎
+  - tutorial/ubuntu基礎
+- 問題表示機能
+  - tasks/はじめに
+  - tasks/nginx
+- チェックサービスの導入
+  - tasks/nginx/result
+- ランキング表示
+  - task/nginx/submissions
+  - ranking/
 
 ## Enbironment
 
@@ -78,29 +94,6 @@ cp .env.sample .env
 ```
 
 Access: <http://localhost/>
-
-### CDK
-
-インフラ構成はCDKを利用する(予定)。
-
-```shell
-# cdk install
-npm install -g aws-cdk
-
-# aws cli install
-brew install awscli
-
-# aws configure
-aws configure
-
-# cdk deploy
-cd ./cdk
-npm install
-npm run build
-cdk deploy
-```
-
-<https://aws.amazon.com/jp/cdk/>
 
 ## Database
 <!-- データベース構成 -->
@@ -173,44 +166,4 @@ Webアプリケーション構成は以下の通りです。
   /register --> POST;
 
   /logout --> POST;
-
-  /issues --> GET;
-  /issues --> POST;
-  /issues/:id --> GET;
-  /issues/:id --> POST;
-  /issues/:id/edit --> GET;
-  /issues/:id/edit --> POST;
-  /issues/:id/delete --> POST;
-
-  /categories --> GET;
-  /categories --> POST;
-  /categories/:id --> GET;
-  /categories/:id --> POST;
-  /categories/:id/edit --> GET;
-  /categories/:id/edit --> POST;
-  /categories/:id/delete --> POST;
-
-  /groups --> GET;
-  /groups --> POST;
-  /groups/:id --> GET;
-  /groups/:id --> POST;
-  /groups/:id/edit --> GET;
-  /groups/:id/edit --> POST;
-  /groups/:id/delete --> POST;
-
-  /users --> GET;
-  /users --> POST;
-  /users/:id --> GET;
-  /users/:id --> POST;
-  /users/:id/edit --> GET;
-  /users/:id/edit --> POST;
-  /users/:id/delete --> POST;
-
-  /issues/:id/result --> GET;
-  /issues/:id/result --> POST;
-  /issues/:id/result/:id --> GET;
-  /issues/:id/result/:id --> POST;
-  /issues/:id/result/:id/edit --> GET;
-  /issues/:id/result/:id/edit --> POST;
-  /issues/:id/result/:id/delete --> POST;
 ```
