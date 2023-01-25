@@ -1,0 +1,49 @@
+version: "3"
+
+volumes:
+  php_socket:
+  data:
+networks:
+  web:
+    driver: bridge
+services:
+  app:
+    build:
+      context: .
+      dockerfile: ./infra/php/Dockerfile
+    volumes:
+      - php_socket:/var/run/php-fpm
+    networks:
+      - web
+  web:
+    container_name: web
+    build:
+      context: .
+      dockerfile: ./infra/web/Dockerfile
+    volumes:
+      - php_socket:/var/run/php-fpm
+    ports:
+      - "8081:80"
+    depends_on:
+      - app
+    networks:
+      - web
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 'password'
+      MYSQL_ROOT_HOST: "%"
+      MYSQL_DATABASE: 'mysql'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+      TZ: 'Asia/Tokyo'
+    command: mysqld --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - data:/var/lib/mysql
+      - ./infra/db/my.cnf:/etc/mysql/conf.d/my.cnf
+    ports:
+      - 3306:3306
+    networks:
+      - web
