@@ -157,7 +157,7 @@
     <section class="bg-white">
         <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
             <h2 class="text-center text-2xl font-bold tracking-tight sm:text-3xl">
-                お客様の声
+                利用者の声
             </h2>
 
             <div class="swiper-container mt-12 !overflow-hidden">
