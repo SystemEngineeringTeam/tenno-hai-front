@@ -38,6 +38,9 @@
 
 ### Laravel Web Routes
 
+- 製品紹介ページ
+    - /
+        - GET
 - 会員登録機能(middleware:auth)
   - /login
   - /register
