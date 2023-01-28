@@ -41,6 +41,11 @@
 - 製品紹介ページ
     - /
         - GET
+- ダッシュボード画面
+    - /dashboard
+        - GET
+        - Userのステータス
+        - プロセス提案
 - 会員登録機能(middleware:auth)
   - /login
   - /register
@@ -121,28 +126,9 @@ cp .env.sample .env
 
 Access: <http://localhost/>
 
-### CDK
+### Terraform
 
-インフラ構成はCDKを利用する(予定)。
-
-```shell
-# cdk install
-npm install -g aws-cdk
-
-# aws cli install
-brew install awscli
-
-# aws configure
-aws configure
-
-# cdk deploy
-cd ./cdk
-npm install
-npm run build
-cdk deploy
-```
-
-<https://aws.amazon.com/jp/cdk/>
+インフラ構成はTerraformを利用する(予定)
 
 ## Database
 <!-- データベース構成 -->
