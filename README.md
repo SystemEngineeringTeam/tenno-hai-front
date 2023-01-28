@@ -22,7 +22,7 @@
 シス研に限らず、インフラを学びたい方に向けたサービスを提供する予定です。
 
 ## Requirement definition
-<!-- 要件定義,実装した機能 -->
+<!-- 要件定義 -->
 
 - 問題文表示機能
   - MarkDown
@@ -36,23 +36,46 @@
 
 ## Feature
 
+### Laravel Web Routes
+
 - 会員登録機能(middleware:auth)
   - /login
   - /register
   - /profile
   - /group
 - 環境構築機能
-  - tutorial/getting-started
-  - tutorial/docker基礎
-  - tutorial/ubuntu基礎
+    - /tutorial/
+        - GET
+        - チュートリアルの一覧
+    - /tutorial/{:post_id}
+        - GET,PUT,DELETE
+        - チュートリアルの内容
+            - tutorial/getting-started
+            - tutorial/docker基礎
+            - tutorial/ubuntu基礎
+    - /tutorial/new
+        - GET,POST
+        - チュートリアルの投稿
 - 問題表示機能
-  - tasks/はじめに
-  - tasks/nginx
+    - /tasks/
+        - GET
+        - タスクの一覧
+    - /tasks/{:post_id}
+        - GET,PUT,DELETE
+        - タスクの内容
+            - tasks/nginx
+    - /tasks/new
+        - GET,POST
+        - タスクの追加
 - チェックサービスの導入
-  - tasks/nginx/result
+    - /tasks/{:post_id}/result/
+        - GET,POST
+        - タスクの完了判定
 - ランキング表示
-  - task/nginx/submissions
-  - ranking/
+    - /task/{:post_id}/submissions
+        - GET
+    - /ranking/
+        - GET
 
 ## Enbironment
 
@@ -94,6 +117,29 @@ cp .env.sample .env
 ```
 
 Access: <http://localhost/>
+
+### CDK
+
+インフラ構成はCDKを利用する(予定)。
+
+```shell
+# cdk install
+npm install -g aws-cdk
+
+# aws cli install
+brew install awscli
+
+# aws configure
+aws configure
+
+# cdk deploy
+cd ./cdk
+npm install
+npm run build
+cdk deploy
+```
+
+<https://aws.amazon.com/jp/cdk/>
 
 ## Database
 <!-- データベース構成 -->
@@ -150,20 +196,4 @@ classDiagram
         +TIMESTAMP created_at
         +TIMESTAMP updated_at
     }
-```
-
-## Web
-<!-- Webアプリケーション構成 -->
-Webアプリケーション構成は以下の通りです。
-
-```php
-  /index --> GET;
-
-  /login --> GET;
-  /login --> POST;
-
-  /register --> GET;
-  /register --> POST;
-
-  /logout --> POST;
 ```
