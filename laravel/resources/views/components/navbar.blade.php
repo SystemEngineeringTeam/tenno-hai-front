@@ -2,7 +2,7 @@
     <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div class="flex h-16 items-center justify-between">
             <div class="md:flex md:items-center md:gap-12">
-                <a class="block font-bold text-2xl text-blue-600" href="/">
+                <a class="block font-bold text-2xl text-blue-600" href="/dashboard">
                     tenno-hai
                 </a>
             </div>
@@ -11,25 +11,25 @@
                 <nav aria-label="Site Nav">
                     <ul class="flex items-center gap-6 text-sm">
                         <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/dashboard">
                                 Dashboard
                             </a>
                         </li>
 
                         <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/tutorial">
                                 Tutorial
                             </a>
                         </li>
 
                         <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/task">
                                 Task
                             </a>
                         </li>
 
                         <li>
-                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/">
+                            <a class="text-gray-500 transition hover:text-gray-500/75" href="/ranking">
                                 Ranking
                             </a>
                         </li>
