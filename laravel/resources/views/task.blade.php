@@ -7,8 +7,8 @@
                     <h1 class="sm:text-3xl text-2xl font-medium title-font mb-2 text-gray-900">Task</h1>
                     <div class="h-1 w-20 bg-blue-600 rounded"></div>
                 </div>
-                <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">このページではインフラを触る為の必要な知識を学ぶことが出来ます。
-                    色々なセクションを通して、インフラの仕組みを理解し、触れるようになりましょう！
+                <p class="lg:w-1/2 w-full leading-relaxed text-gray-500">このページでは実際にインフラを触ってみましょう！
+                    まずは、sshを使ってサーバーにログインしてみましょう！
                 </p>
             </div>
             <ul class="flex border-b border-gray-100">
