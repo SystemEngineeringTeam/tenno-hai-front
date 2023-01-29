@@ -16,8 +16,8 @@
                         <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-gray-600 hover:shadow-md">
                             <img class="h-40 rounded w-full object-cover object-center mb-6"
                                 src="https://dummyimage.com/720x400" alt="content">
-                            <h3 class="tracking-widest text-blue-600 text-xs font-medium title-font">基礎知識</h3>
-                            <h2 class="text-lg text-gray-900 font-medium title-font mb-4">Dockerのインストール</h2>
+                            <h3 class="tracking-widest text-blue-600 text-xs title-font font-extrabold">基礎知識</h3>
+                            <h2 class="text-lg text-gray-900 font-bold title-font mb-4">Dockerのインストール</h2>
                             <p class="leading-relaxed text-base">天皇杯のタスクを触れるようにする為の基礎知識として、Dockerのインストールを行います。</p>
                         </div>
                     </a>
