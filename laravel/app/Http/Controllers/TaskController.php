@@ -13,11 +13,11 @@ class TaskController extends Controller
         return view('task');
     }
 
-    public function show($id)
+    public function show(int $id)
     {
-        //idからIssueを取得
+        //Issueを1件取得
         $task = Issue::find($id);
-        //viewに渡す
-        return view('task', ['task' => $task]);
+        // task.show
+        return view('task.show', ['task' => $task]);
     }
 }
