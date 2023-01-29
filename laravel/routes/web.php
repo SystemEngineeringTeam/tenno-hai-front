@@ -30,8 +30,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         return view('tutorial');
     })->name('tutorial');
 
-    Route::get('/task',[TaskController::class, 'index'])->name('task.index');
-    Route::get('/task/{id}',[TaskController::class, 'show'])->name('task.show');
+    Route::resource('task', TaskController::class);
 
     Route::get('/ranking', function () {
         return view('ranking');
