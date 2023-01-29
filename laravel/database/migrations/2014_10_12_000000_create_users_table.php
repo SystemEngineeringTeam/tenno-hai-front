@@ -16,6 +16,7 @@ return new class extends Migration
 +VARCHAR password
 +VARCHAR remember_token [nullable]
 +bigInteger group_id [nullable]
++boolean is_admin [default: false]
 +TIMESTAMP created_at
 +TIMESTAMP updated_at
      * @return void
@@ -30,6 +31,7 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->unsignedBigInteger('group_id')->nullable();
+            $table->boolean('is_admin')->default(false);
             $table->foreign("group_id")->references("id")->on("groups");
             $table->timestamps();
         });
