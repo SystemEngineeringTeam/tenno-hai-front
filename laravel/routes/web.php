@@ -18,9 +18,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+
+    Route::get('/tutorial',function(){
+        return view('tutorial');
+    })->name('tutorial');
+
+    Route::get('/task', function () {
+        return view('task');
+    })->name('task');
+
+    Route::get('/ranking', function () {
+        return view('ranking');
+    })->name('ranking');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
