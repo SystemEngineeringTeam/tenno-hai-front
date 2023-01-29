@@ -11,6 +11,7 @@ return new class extends Migration
      * Issue
 +bigIncrements id
 +VARCHAR title
++TEXT overview
 +TEXT content
 +bigInteger category_id
 +TIMESTAMP created_at
@@ -22,6 +23,7 @@ return new class extends Migration
         Schema::create('issues', function (Blueprint $table) {
             $table->id();
             $table->string("title");
+            $table->text("overview");
             $table->text("content");
             $table->unsignedBigInteger("category_id");
             $table->foreign("category_id")->references("id")->on("categories");
