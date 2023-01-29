@@ -16,7 +16,7 @@ class TaskController extends Controller
     public function index(): View
     {
         //Issueを全件取得
-        return view('task');
+        return view('task.index');
     }
 
     /**
@@ -24,9 +24,9 @@ class TaskController extends Controller
      *
      *
      */
-    public function create()
+    public function create(): View
     {
-        //
+        return view('task.create');
     }
 
     /**
@@ -37,7 +37,7 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
     }
 
     /**
@@ -60,9 +60,9 @@ class TaskController extends Controller
      *
      *
      */
-    public function edit()
+    public function edit(): View
     {
-        //
+        return view('task.edit');
     }
 
     /**
