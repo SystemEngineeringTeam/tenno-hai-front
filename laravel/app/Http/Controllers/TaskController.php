@@ -16,7 +16,9 @@ class TaskController extends Controller
     public function index(): View
     {
         //Issueを全件取得
-        return view('task.index');
+        $tasks = Issue::all();
+        // task.index
+        return view('task.index', ['tasks' => $tasks]);
     }
 
     /**
@@ -71,9 +73,12 @@ class TaskController extends Controller
      *
      *
      */
-    public function edit(): View
+    public function edit(int $id): View
     {
-        return view('task.edit');
+        // taskを1件取得
+        $task = Issue::find($id);
+        // task.edit
+        return view('task.edit', ['task' => $task]);
     }
 
     /**
@@ -83,9 +88,19 @@ class TaskController extends Controller
      *
      *
      */
-    public function update()
+    public function update(Request $request, int $id)
     {
-        //
+        // taskを1件アップデート
+        $task = Issue::find($id);
+
+        $task->title = $request->title;
+        $task->overview = $request->overview;
+        $task->image_path = $request->image_path;
+        $task->content = $request->content;
+        $task->category_id = $request->category_id;
+
+        $task->save();
+        return redirect()->route('task.index');
     }
 
     /**
@@ -94,8 +109,11 @@ class TaskController extends Controller
      *
      *
      */
-    public function destroy()
+    public function destroy(int $id)
     {
-        //
+        // taskを1件削除
+        $task = Issue::find($id);
+        $task->delete();
+        return redirect()->route('task.index');
     }
 }
