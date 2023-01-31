@@ -13,9 +13,10 @@
             </div>
             <ul class="flex border-b border-gray-100">
                 <li class="flex-1">
-                    <a class="relative block p-4" href="">
-                        <span class="absolute inset-x-0 -bottom-px h-px w-full bg-blue-600"></span>
-
+                    <a class="relative block p-4" href="/task?category=1">
+                        @if (request()->input('category') == 1 || request()->input('category') == null)
+                            <span class="absolute inset-x-0 -bottom-px h-px w-full bg-blue-600"></span>
+                        @endif
                         <div class="flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-500"
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -29,7 +30,10 @@
                 </li>
 
                 <li class="flex-1">
-                    <a class="relative block p-4" href="">
+                    <a class="relative block p-4" href="/task?category=2">
+                        @if (request()->input('category') == 2)
+                            <span class="absolute inset-x-0 -bottom-px h-px w-full bg-blue-600"></span>
+                        @endif
                         <div class="flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-500"
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -43,7 +47,10 @@
                 </li>
 
                 <li class="flex-1">
-                    <a class="relative block p-4" href="">
+                    <a class="relative block p-4" href="/task?category=3">
+                        @if (request()->input('category') == 3)
+                            <span class="absolute inset-x-0 -bottom-px h-px w-full bg-blue-600"></span>
+                        @endif
                         <div class="flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-500"
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -57,7 +64,10 @@
                 </li>
 
                 <li class="flex-1">
-                    <a class="relative block p-4" href="">
+                    <a class="relative block p-4" href="/task?category=4">
+                        @if (request()->input('category') == 4)
+                            <span class="absolute inset-x-0 -bottom-px h-px w-full bg-blue-600"></span>
+                        @endif
                         <div class="flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 flex-shrink-0 text-gray-500"
                                 fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -77,11 +87,10 @@
 
                 @foreach ($tasks as $t)
                     <div class="xl:w-1/4 md:w-1/2 p-4">
-                        <a href="/dashboard">
+                        <a href="/task/{{ $t->id }}">
                             <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-gray-600 hover:shadow-md">
                                 <img class="h-40 rounded w-full object-cover object-center mb-6"
                                     src="{{ asset($t->image_path) }}" alt="content">
-                                {{ $t->image_path }}
                                 <h3 class="tracking-widest text-blue-600 text-xs title-font font-extrabold">general</h3>
                                 <h2 class="text-lg text-gray-900 font-bold title-font mb-4">{{ $t->title }}</h2>
                                 <p class="leading-relaxed text-base">{{ $t->overview }}</p>

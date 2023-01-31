@@ -13,10 +13,16 @@ class TaskController extends Controller
      *
      *  @return View
      */
-    public function index(): View
+    public function index(Request $request): View
     {
         //Issueを全件取得
-        $tasks = Issue::all();
+        //クエリパラメーターを取得
+        $category_id = $request->query('category');
+        if ($category_id) {
+            $tasks = Issue::where('category_id', $category_id)->get();
+        } else {
+            $tasks = Issue::where('category_id', 1)->get();
+        }
         // task.index
         return view('task.index', ['tasks' => $tasks]);
     }
