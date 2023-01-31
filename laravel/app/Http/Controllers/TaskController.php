@@ -37,7 +37,18 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
+        //Issueを作成
+        $task = new Issue();
 
+        $task->title = $request->title;
+        $task->overview = $request->overview;
+        $task->image_path = $request->image_path;
+        $task->content = $request->content;
+        $task->category_id = $request->category_id;
+
+        $task->save();
+
+        return redirect()->route('task.index');
     }
 
     /**
