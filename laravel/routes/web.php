@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\RankingController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,9 +33,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::resource('task', TaskController::class);
 
-    Route::get('/ranking', function () {
-        return view('ranking');
-    })->name('ranking');
+    Route::get('/ranking', [RankingController::class, 'index'])->name('ranking.index');
 });
 
 Route::middleware('auth')->group(function () {
