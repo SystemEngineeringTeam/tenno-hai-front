@@ -102,4 +102,5 @@
 
         </div>
     </section>
+    @include('components.footer')
 </x-app-layout>
