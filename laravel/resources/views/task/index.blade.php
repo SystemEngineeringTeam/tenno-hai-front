@@ -73,19 +73,22 @@
                 </li>
             </ul>
 
-
             <div class="flex flex-wrap mt-4">
-                <div class="xl:w-1/4 md:w-1/2 p-4">
-                    <a href="/dashboard">
-                        <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-gray-600 hover:shadow-md">
-                            <img class="h-40 rounded w-full object-cover object-center mb-6"
-                                src="https://dummyimage.com/720x400" alt="content">
-                            <h3 class="tracking-widest text-blue-600 text-xs title-font font-extrabold">general</h3>
-                            <h2 class="text-lg text-gray-900 font-bold title-font mb-4">ssh設定</h2>
-                            <p class="leading-relaxed text-base">ホストマシンからDocker上のUbuntuにsshの設定をしてみましょう。</p>
-                        </div>
-                    </a>
-                </div>
+
+                @foreach ($tasks as $t)
+                    <div class="xl:w-1/4 md:w-1/2 p-4">
+                        <a href="/dashboard">
+                            <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-gray-600 hover:shadow-md">
+                                <img class="h-40 rounded w-full object-cover object-center mb-6"
+                                    src="{{ asset($t->image_path) }}" alt="content">
+                                {{ $t->image_path }}
+                                <h3 class="tracking-widest text-blue-600 text-xs title-font font-extrabold">general</h3>
+                                <h2 class="text-lg text-gray-900 font-bold title-font mb-4">{{ $t->title }}</h2>
+                                <p class="leading-relaxed text-base">{{ $t->overview }}</p>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
 
         </div>

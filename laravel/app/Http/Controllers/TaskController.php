@@ -47,7 +47,7 @@ class TaskController extends Controller
         $task->overview = $request->overview;
 
         $save_file = $request->file('image_path')->store('public/' . $dir);
-        $task->image_path = "public/" . $dir . "/" . basename($save_file);
+        $task->image_path = 'storage/' . $dir . '/' . basename($save_file);
         $task->content = $request->content;
         $task->category_id = $request->category_id;
 
@@ -101,7 +101,7 @@ class TaskController extends Controller
         $task->title = $request->title;
         $task->overview = $request->overview;
         $save_file = $request->file('image_path')->store('public/' . $dir);
-        $task->image_path = "public/" . $dir . "/" . basename($save_file);
+        $task->image_path = 'storage/' . $dir . '/' . basename($save_file);
 
         $task->content = $request->content;
         $task->category_id = $request->category_id;
