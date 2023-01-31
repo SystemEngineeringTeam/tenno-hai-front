@@ -12,6 +12,7 @@ return new class extends Migration
 +bigIncrements id
 +VARCHAR title
 +TEXT overview
++TEXT image_path
 +TEXT content
 +bigInteger category_id
 +TIMESTAMP created_at
