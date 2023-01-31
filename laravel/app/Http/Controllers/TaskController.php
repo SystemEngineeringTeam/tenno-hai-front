@@ -93,12 +93,16 @@ class TaskController extends Controller
      */
     public function update(Request $request, int $id)
     {
+
+        $dir = 'sample';
         // taskを1件アップデート
         $task = Issue::find($id);
 
         $task->title = $request->title;
         $task->overview = $request->overview;
-        $task->image_path = $request->image_path;
+        $save_file = $request->file('image_path')->store('public/' . $dir);
+        $task->image_path = "public/" . $dir . "/" . basename($save_file);
+
         $task->content = $request->content;
         $task->category_id = $request->category_id;
 

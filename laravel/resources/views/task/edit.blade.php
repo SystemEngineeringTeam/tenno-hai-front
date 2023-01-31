@@ -2,7 +2,7 @@
     <h1>編集</h1>
     <p><a href="{{ route('task.index') }}"> Item List </a></p>
 
-    <form action="{{ route('task.update', $task->id) }}" method="POST">
+    <form action="{{ route('task.update', $task->id) }}" method="POST" enctype="multipart/form-data">
         +bigIncrements id
         +VARCHAR title
         +TEXT overview
@@ -15,7 +15,7 @@
         @method('PUT')
         <input type="text" name="title" value="{{ $task->title }}">
         <input type="text" name="overview" value="{{ $task->overview }}">
-        <input type="text" name="image_path" value="{{ $task->image_path }}">
+        <input type="file" name="image_path" value="{{ $task->image_path }}">
         <input type="text" name="content" value="{{ $task->content }}">
         <input type="text" name="category_id" value="{{ $task->category_id }}">
         <input type="submit" value="更新">
