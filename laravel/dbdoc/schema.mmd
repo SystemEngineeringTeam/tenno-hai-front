@@ -1,0 +1,80 @@
+erDiagram
+
+"issues" }o--|| "categories" : "FOREIGN KEY (category_id) REFERENCES categories (id)"
+"results" }o--|| "issues" : "FOREIGN KEY (issue_id) REFERENCES issues (id)"
+"results" }o--|| "users" : "FOREIGN KEY (user_id) REFERENCES users (id)"
+"users" }o--o| "groups" : "FOREIGN KEY (group_id) REFERENCES groups (id)"
+
+"categories" {
+  bigint_unsigned id PK
+  varchar_255_ name
+  timestamp created_at
+  timestamp updated_at
+}
+"failed_jobs" {
+  bigint_unsigned id PK
+  varchar_255_ uuid
+  text connection
+  text queue
+  longtext payload
+  longtext exception
+  timestamp failed_at
+}
+"groups" {
+  bigint_unsigned id PK
+  varchar_255_ name
+  timestamp created_at
+  timestamp updated_at
+}
+"issues" {
+  bigint_unsigned id PK
+  varchar_255_ title
+  text overview
+  text image_path
+  text content
+  bigint_unsigned category_id FK
+  timestamp created_at
+  timestamp updated_at
+}
+"migrations" {
+  int_unsigned id PK
+  varchar_255_ migration
+  int batch
+}
+"password_resets" {
+  varchar_255_ email PK
+  varchar_255_ token
+  timestamp created_at
+}
+"personal_access_tokens" {
+  bigint_unsigned id PK
+  varchar_255_ tokenable_type
+  bigint_unsigned tokenable_id
+  varchar_255_ name
+  varchar_64_ token
+  text abilities
+  timestamp last_used_at
+  timestamp expires_at
+  timestamp created_at
+  timestamp updated_at
+}
+"results" {
+  bigint_unsigned id PK
+  bigint_unsigned user_id FK
+  bigint_unsigned issue_id FK
+  tinyint_1_ answer
+  timestamp created_at
+  timestamp updated_at
+}
+"users" {
+  bigint_unsigned id PK
+  varchar_255_ name
+  varchar_255_ email
+  timestamp email_verified_at
+  varchar_255_ password
+  varchar_100_ remember_token
+  bigint_unsigned group_id FK
+  tinyint_1_ is_admin
+  timestamp created_at
+  timestamp updated_at
+}
