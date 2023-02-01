@@ -91,9 +91,8 @@
                             <div class="bg-gray-100 p-6 rounded-lg shadow-lg hover:shadow-gray-600 hover:shadow-md">
                                 <img class="h-40 rounded w-full object-cover object-center mb-6"
                                     src="{{ asset($t->image_path) }}" alt="content">
-                                <h3 class="tracking-widest text-blue-600 text-xs title-font font-extrabold">general</h3>
-                                <h2 class="text-lg text-gray-900 font-bold title-font mb-4">{{ $t->title }}</h2>
-                                <p class="leading-relaxed text-base">{{ $t->overview }}</p>
+                                    <h2 class="text-lg text-gray-900 font-bold title-font mb-4">{{ $t->title }}</h2>
+                                    <p class="leading-relaxed text-base">{{ $t->overview }}</p>
                             </div>
                         </a>
                     </div>
