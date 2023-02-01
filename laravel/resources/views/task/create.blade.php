@@ -8,29 +8,32 @@
             </p>
         </div>
 
-        <form action="" class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+        <form action="{{ route('task.store') }}" method="POST" enctype="multipart/form-data"
+            class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+            @csrf
             <div class="mb-6">
-                <label for="base-input" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
-                <input type="text" id="base-input" placeholder="タスクのタイトル"
+                <label for="base-input"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
+                <input type="text" id="title" name="title" value="{{ old('title') }}"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
             <div class="mb-6">
                 <label for="large-input"
                     class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Overview</label>
-                <input type="text" id="base-input" placeholder="タスクの概要"
+                <input type="text" id="overview" name="overview" value="{{ old('overview') }}"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             </div>
 
             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Content</label>
-            <textarea id="message" rows="4"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="コンテンツの内容"></textarea>
+            <textarea id="content" rows="4" name="content" value="{{ old('content') }}"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"></textarea>
 
             <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="user_avatar">Upload
                 file</label>
             <input
                 class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-                aria-describedby="user_avatar_help" id="user_avatar" type="file">
+                aria-describedby="user_avatar_help" id="image_path" name="image_path" value="{{ old('image_path') }}"
+                type="file">
             <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
                 message</label>
             <fieldset>
@@ -64,7 +67,7 @@
                 </div>
 
                 <div class="flex items-center mb-4">
-                    <input id="country-option-4" type="radio" name="category_id" value="4m"
+                    <input id="country-option-4" type="radio" name="category_id" value="4"
                         class="w-4 h-4 border-gray-300 focus:ring-2 focus:ring:blue-300 dark:focus-ring-blue-600 dark:bg-gray-700 dark:border-gray-600">
                     <label for="country-option-4"
                         class="block ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
@@ -76,31 +79,10 @@
 
 
 
-            <div class="flex items-center justify-between">
-                <button type="submit"
-                    class="ml-3 inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
-                    Submit
-                </button>
-            </div>
+
+            <button type="submit" class="inline-block rounded-lg bg-blue-500 px-5 py-3 text-sm font-medium text-white">
+                Submit
+            </button>
         </form>
     </div>
-    <form action="{{ route('task.store') }}" method="POST" enctype="multipart/form-data">
-        @csrf
-        <div>
-            +bigIncrements id
-            +VARCHAR title
-            +TEXT overview
-            +TEXT image_path
-            +TEXT content
-            +bigInteger category_id
-            +TIMESTAMP created_at
-            +TIMESTAMP updated_at
-            <input type="text" name="title" id="title" value="{{ old('title') }}">
-            <input type="text" name="overview" id="overview" value="{{ old('overview') }}">
-            <input type="file" name="image_path" id="image_path" value="{{ old('image_path') }}">
-            <input type="text" name="content" id="content" value="{{ old('content') }}">
-            <input type="text" name="category_id" id="category_id" value="{{ old('category_id') }}">
-        </div>
-        <input type="submit" value="登録">
-    </form>
 </x-app-layout>
