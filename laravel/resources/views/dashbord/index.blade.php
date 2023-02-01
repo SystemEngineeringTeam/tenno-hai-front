@@ -16,7 +16,7 @@
             </div>
             <dl class="mt-6 flex">
                 <div class="flex flex-col-reverse">
-                    <dt class="text-xl font-medium text-blue-600">1</dt>
+                    <dt class="text-xl font-medium text-blue-600">{{ $clear_count }}</dt>
                     <dd class="text-xs text-gray-500">タスククリア数</dd>
                 </div>
             </dl>
