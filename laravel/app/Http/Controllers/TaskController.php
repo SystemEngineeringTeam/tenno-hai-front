@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Issue;
+use App\Models\Result;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -23,6 +24,21 @@ class TaskController extends Controller
         } else {
             $tasks = Issue::where('category_id', 1)->get();
         }
+
+        // resultを全件取得
+        $results = Result::where('user_id', $request->user()->id)->get();
+
+        // クリアしたissueは配列から削除
+        foreach ($results as $result) {
+            if ($result->answer) {
+                foreach ($tasks as $key => $task) {
+                    if ($task->id === $result->issue_id) {
+                        unset($tasks[$key]);
+                    }
+                }
+            }
+        }
+
         // task.index
         return view('task.index', ['tasks' => $tasks]);
     }
