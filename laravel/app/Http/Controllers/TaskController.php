@@ -72,8 +72,12 @@ class TaskController extends Controller
     {
         //Issueを1件取得
         $task = Issue::find($id);
+
+        // 新しいissueから4件取得
+        $new_issues = Issue::orderBy('created_at', 'desc')->take(4)->get();
+
         // task.show
-        return view('task.show', ['task' => $task]);
+        return view('task.show', ['task' => $task], ['new_issues' => $new_issues]);
     }
 
     /**
