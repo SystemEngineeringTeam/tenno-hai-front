@@ -21,7 +21,7 @@ class DashbordController extends Controller
         $results = Result::where('user_id', $user_id)->get();
         $clear_count = 0;
         foreach ($results as $result) {
-            if ($result->clear_flag) {
+            if ($result->answer) {
                 $clear_count++;
             }
         }
