@@ -36,7 +36,7 @@
                     </p>
 
                     <a class="mt-8 inline-flex items-center rounded border border-blue-600 bg-blue-600 px-8 py-3 text-white hover:bg-transparent hover:text-blue-600 focus:outline-none focus:ring active:text-blue-500"
-                        href="/get-started">
+                        href="/tutorial">
                         <span class="text-sm font-medium"> Get Started </span>
 
                         <svg class="ml-3 h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -49,7 +49,7 @@
 
                 <div class="grid grid-cols-2 gap-4 sm:grid-cols-3">
                     <a class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                        href="/accountant">
+                        href="/tutorial">
                         <span class="inline-block rounded-lg bg-gray-50 p-3">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -72,7 +72,7 @@
                     </a>
 
                     <a class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                        href="/accountant">
+                        href="/tutorial">
                         <span class="inline-block rounded-lg bg-gray-50 p-3">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +94,7 @@
                     </a>
 
                     <a class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                        href="/accountant">
+                        href="/tutorial">
                         <span class="inline-block rounded-lg bg-gray-50 p-3">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -116,7 +116,7 @@
                     </a>
 
                     <a class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                        href="/accountant">
+                        href="/tutorial">
                         <span class="inline-block rounded-lg bg-gray-50 p-3">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -138,7 +138,7 @@
                     </a>
 
                     <a class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                        href="/accountant">
+                        href="/tutorial">
                         <span class="inline-block rounded-lg bg-gray-50 p-3">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -160,7 +160,7 @@
                     </a>
 
                     <a class="block rounded-xl border border-gray-100 p-4 shadow-sm hover:border-gray-200 hover:ring-1 hover:ring-gray-200 focus:outline-none focus:ring"
-                        href="/accountant">
+                        href="/tutorial">
                         <span class="inline-block rounded-lg bg-gray-50 p-3">
                             <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                 xmlns="http://www.w3.org/2000/svg">
