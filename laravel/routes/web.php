@@ -4,6 +4,7 @@ use App\Http\Controllers\DashbordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskController;
 use App\Http\Controllers\RankingController;
+use App\Http\Controllers\ResultController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +34,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::resource('task', TaskController::class);
 
     Route::get('/ranking', [RankingController::class, 'index'])->name('ranking.index');
+
+    Route::get('task/{id}/result', [ResultController::class, 'show'])->name('result.show');
+    Route::post('task/result', [ResultController::class, 'store'])->name('result.store');
 });
 
 Route::middleware('auth')->group(function () {
