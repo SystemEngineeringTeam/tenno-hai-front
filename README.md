@@ -39,51 +39,44 @@
 ### Laravel Web Routes
 
 - 製品紹介ページ
-    - /
-        - GET
+  - /
+    - GET
 - ダッシュボード画面
-    - /dashboard
-        - GET
-        - Userのステータス
-        - プロセス提案
+  - /dashboard
+    - GET
+    - Userのステータス
+    - プロセス提案
 - 会員登録機能(middleware:auth)
   - /login
   - /register
   - /profile
-  - /group
 - 環境構築機能
-    - /tutorial/
-        - GET
-        - チュートリアルの一覧
-    - /tutorial/{:post_id}
-        - GET,PUT,DELETE
-        - チュートリアルの内容
-            - tutorial/getting-started
-            - tutorial/docker基礎
-            - tutorial/ubuntu基礎
-    - /tutorial/new
-        - GET,POST
-        - チュートリアルの投稿
+  - /tutorial
+    - GET
+    - チュートリアルの一覧
+  - /tutorial
 - 問題表示機能
-    - /tasks/
-        - GET
-        - タスクの一覧
-    - /tasks/{:post_id}
-        - GET,PUT,DELETE
-        - タスクの内容
-            - tasks/nginx
-    - /tasks/new
-        - GET,POST
-        - タスクの追加
-- チェックサービスの導入
-    - /tasks/{:post_id}/result/
-        - GET,POST
-        - タスクの完了判定
+  - /task/
+    - GET
+    - タスクの一覧
+  - /task/{:post_id}
+    - GET
+    - タスクの内容
+      - tasks/nginx
+  - /task/{:post_id}/edit
+  - /task/{:post_id}/destroy
+    - GET,PUT,DELETE
+    - タスクの修正、削除
+      - tasks/nginx
+  - /task/create
+    - GET,POST
+    - タスクの追加
+  - /task/result
+    - POST
+    - タスクの完了通知
 - ランキング表示
-    - /task/{:post_id}/submissions
-        - GET
-    - /ranking/
-        - GET
+  - /ranking/
+    - GET
 
 ## Enbironment
 
@@ -187,5 +180,5 @@ classDiagram
     }
 ```
 
-https://tailblocks.cc/
-https://www.hyperui.dev/
+<https://tailblocks.cc/>
+<https://www.hyperui.dev/>
