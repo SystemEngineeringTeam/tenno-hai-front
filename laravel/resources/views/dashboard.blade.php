@@ -16,12 +16,7 @@
             </div>
             <dl class="mt-6 flex">
                 <div class="flex flex-col-reverse">
-                    <dt class="text-sm font-medium text-gray-600">1</dt>
-                    <dd class="text-xs text-gray-500">チュートリアルクリア数</dd>
-                </div>
-
-                <div class="ml-3 flex flex-col-reverse sm:ml-6">
-                    <dt class="text-sm font-medium text-gray-600">3</dt>
+                    <dt class="text-xl font-medium text-blue-600">1</dt>
                     <dd class="text-xs text-gray-500">タスククリア数</dd>
                 </div>
             </dl>
