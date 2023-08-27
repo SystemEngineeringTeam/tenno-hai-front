@@ -8,6 +8,8 @@
 <!-- 使い方 -->
 <https://tennohai.qqey.net> から利用出来ます。
 
+仕様書: https://github.com/SystemEngineeringTeam/tenno-hai-front/blob/main/usecase.md
+
 <!-- TODO -->
 
 ## Purpose
